@@ -104,40 +104,47 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="bg-white py-16 md:py-24">
+    <section id="contact" className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-24 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-licBlue/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-licGold/5 rounded-full blur-3xl -z-10"></div>
+      
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <Badge className="bg-licBlue/10 text-licBlue hover:bg-licBlue/20 mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in-up">
+          <Badge className="bg-licBlue/10 text-licBlue hover:bg-licBlue/20 mb-4 px-4 py-1 text-sm transition-all duration-300 hover:scale-105">
             {t('contact.badge')}
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {t('contact.title')} <span className="text-licBlue">{t('contact.titleAccent')}</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            {t('contact.title')} <span className="bg-gradient-to-r from-licBlue to-blue-700 bg-clip-text text-transparent">{t('contact.titleAccent')}</span>
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
             {t('contact.subtitle')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {contactInfo.map((item, index) => (
-                <Card key={item.title} className="border-none shadow-sm hover:shadow-md transition-all">
-                  <CardContent className="p-4 flex items-start gap-3">
-                    <div className="text-licBlue mt-1">{item.icon}</div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                <Card key={item.title} className="group border-2 border-gray-100 hover:border-licBlue/20 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-licBlue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <CardContent className="p-5 flex items-start gap-4 relative z-10">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-licBlue to-blue-700 flex items-center justify-center text-white shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                      {item.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="text-gray-600 hover:text-licBlue transition-colors"
+                          className="text-gray-600 hover:text-licBlue transition-colors text-sm font-medium"
                           target={item.href.startsWith("http") ? "_blank" : undefined}
                           rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-gray-600">{item.value}</p>
+                        <p className="text-gray-600 text-sm font-medium">{item.value}</p>
                       )}
                     </div>
                   </CardContent>
@@ -225,8 +232,13 @@ export function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-6">{t('contact.formTitle')}</h3>
+          <div className="bg-white p-8 md:p-10 rounded-2xl shadow-2xl border-2 border-gray-100 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-licBlue/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-licGold/5 rounded-full blur-3xl"></div>
+            
+            <div className="relative z-10">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{t('contact.formTitle')}</h3>
+              <div className="h-1 w-24 bg-gradient-to-r from-licBlue to-licGold rounded-full mb-8"></div>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -362,6 +374,7 @@ export function ContactSection() {
                   {t('contact.appointmentForm')}
                 </a>
               </p>
+            </div>
             </div>
           </div>
         </div>

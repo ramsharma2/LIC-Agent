@@ -9,16 +9,20 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export function ExpertiseSection() {
   const { t } = useLanguage();
   return (
-    <section id="expertise" className="bg-white py-16 md:py-24">
+    <section id="expertise" className="bg-gradient-to-b from-white to-gray-50 py-16 md:py-24 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-licBlue/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-licGold/5 rounded-full blur-3xl -z-10"></div>
+      
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <Badge className="bg-licBlue/10 text-licBlue hover:bg-licBlue/20 mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in-up">
+          <Badge className="bg-licBlue/10 text-licBlue hover:bg-licBlue/20 mb-4 px-4 py-1 text-sm transition-all duration-300 hover:scale-105">
             {t('expertise.badge')}
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {t('expertise.title')} <span className="text-licBlue">{t('expertise.titleAccent')}</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            {t('expertise.title')} <span className="bg-gradient-to-r from-licBlue to-blue-700 bg-clip-text text-transparent">{t('expertise.titleAccent')}</span>
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
             {t('expertise.subtitle')}
           </p>
         </div>
@@ -47,10 +51,11 @@ export function ExpertiseSection() {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="financial" className="p-6 bg-gray-50 rounded-lg shadow-inner">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <TabsContent value="financial" className="p-8 bg-white rounded-2xl shadow-xl border-2 border-gray-100 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-licBlue/5 rounded-full blur-3xl"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-licBlue">{t('expertise.financialNeedsAnalysis')}</h3>
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-licBlue to-blue-700 bg-clip-text text-transparent">{t('expertise.financialNeedsAnalysis')}</h3>
                 <p className="text-gray-700 mb-4">
                   {t('expertise.financialNeedsDesc')}
                 </p>
@@ -92,9 +97,10 @@ export function ExpertiseSection() {
             </div>
           </TabsContent>
 
-          <TabsContent value="insurance" className="p-6 bg-gray-50 rounded-lg shadow-inner">
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold mb-4 text-licBlue">{t('expertise.productKnowledge')}</h3>
+          <TabsContent value="insurance" className="p-8 bg-white rounded-2xl shadow-xl border-2 border-gray-100 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-licBlue/5 rounded-full blur-3xl"></div>
+            <div className="space-y-6 relative z-10">
+              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-licBlue to-blue-700 bg-clip-text text-transparent">{t('expertise.productKnowledge')}</h3>
               <p className="text-gray-700 mb-4">
                 {t('expertise.productKnowledgeDesc')}
               </p>
@@ -143,9 +149,10 @@ export function ExpertiseSection() {
             </div>
           </TabsContent>
 
-          <TabsContent value="service" className="p-6 bg-gray-50 rounded-lg shadow-inner">
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold mb-4 text-licBlue">{t('expertise.policyServiceExpertise')}</h3>
+          <TabsContent value="service" className="p-8 bg-white rounded-2xl shadow-xl border-2 border-gray-100 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-licBlue/5 rounded-full blur-3xl"></div>
+            <div className="space-y-6 relative z-10">
+              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-licBlue to-blue-700 bg-clip-text text-transparent">{t('expertise.policyServiceExpertise')}</h3>
               <p className="text-gray-700 mb-4">
                 {t('expertise.policyServiceExpertiseDesc')}
               </p>
@@ -188,9 +195,10 @@ export function ExpertiseSection() {
             </div>
           </TabsContent>
 
-          <TabsContent value="tax" className="p-6 bg-gray-50 rounded-lg shadow-inner">
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold mb-4 text-licBlue">{t('expertise.taxPlanningKnowledge')}</h3>
+          <TabsContent value="tax" className="p-8 bg-white rounded-2xl shadow-xl border-2 border-gray-100 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-licBlue/5 rounded-full blur-3xl"></div>
+            <div className="space-y-6 relative z-10">
+              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-licBlue to-blue-700 bg-clip-text text-transparent">{t('expertise.taxPlanningKnowledge')}</h3>
               <p className="text-gray-700 mb-4">
                 {t('expertise.taxPlanningKnowledgeDesc')}
               </p>
