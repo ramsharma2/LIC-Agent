@@ -114,7 +114,7 @@ export function ServicesSection() {
             <p className="text-gray-700 italic">
               "I believe in providing personalized service to every client. Your financial security is my priority."
             </p>
-            <p className="font-semibold mt-2">- Indra Prakash Sharma</p>
+            <p className="font-semibold mt-2">- Indra Prakash</p>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ export function HeroSection() {
               Secure Your Future with Expert <span className="gold-accent">Life Insurance</span> Planning
             </h1>
             <p className="text-lg md:text-xl mb-6 text-gray-100">
-              Indra Prakash Sharma, authorized LIC agent with over 2 years of experience helping families secure their financial future.
+              Indra Prakash, authorized LIC agent with over 2 years of experience helping families secure their financial future.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
               <Button asChild size="lg" className="bg-licGold hover:bg-licGold/90 text-gray-900 font-semibold">
@@ -60,7 +60,7 @@ export function HeroSection() {
               <div className="relative h-64 w-64 sm:h-80 sm:w-80 rounded-full overflow-hidden border-4 border-white">
                 <Image
                   src="/images/agent-photo.jpg"
-                  alt="Indra Prakash Sharma - LIC Agent"
+                  alt="Indra Prakash - LIC Agent"
                   fill
                   className="object-cover"
                 />

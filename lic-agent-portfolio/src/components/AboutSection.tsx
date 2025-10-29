@@ -26,7 +26,7 @@ export function AboutSection() {
             <div className="relative rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="\images\cover-photo.jpg"
-                alt="Indra Prakash Sharma with LIC officials"
+                alt="Indra Prakash with LIC officials"
                 width={600}
                 height={400}
                 className="w-full h-auto"
@@ -35,9 +35,9 @@ export function AboutSection() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-4">Indra Prakash Sharma</h3>
+            <h3 className="text-2xl font-semibold mb-4">Indra Prakash</h3>
             <p className="text-gray-700 mb-6">
-              Indra Prakash Sharma has been serving as an authorized Life Insurance Agent with Life Insurance Corporation of India (LIC) since March 15, 2023. With extensive experience and deep knowledge of the life insurance industry, he has helped over 1,400 clients secure their financial future through customized insurance planning.
+              Indra Prakash has been serving as an authorized Life Insurance Agent with Life Insurance Corporation of India (LIC) since March 15, 2023. With extensive experience and deep knowledge of the life insurance industry, he has helped over 1,400 clients secure their financial future through customized insurance planning.
             </p>
 
             <div className="space-y-4 mb-8">

@@ -47,7 +47,7 @@ export function Navbar() {
           />
           <div>
             <h1 className="text-lg font-bold text-licDarkBlue">
-              Indra Prakash Sharma
+              Indra Prakash
             </h1>
             <p className="text-xs text-gray-600">LIC Agent (Khalilabad Branch)</p>
           </div>

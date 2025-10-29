@@ -85,7 +85,7 @@ export function HeroSection() {
               <div className="relative h-72 w-72 sm:h-96 sm:w-96 rounded-full overflow-hidden border-8 border-white/20 shadow-2xl backdrop-blur-sm transition-transform duration-500 hover:scale-105">
                 <Image
                   src="/images/agent-photo.jpg"
-                  alt="Indra Prakash Sharma - LIC Agent"
+                  alt="Indra Prakash - LIC Agent"
                   fill
                   className="object-cover"
                   priority

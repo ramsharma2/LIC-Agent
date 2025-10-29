@@ -18,8 +18,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Indra Prakash Sharma - LIC Agent Portfolio | Life Insurance Expert",
-  description: "Professional portfolio of Indra Prakash Sharma, authorized LIC agent from Khalilabad Branch with expertise in life insurance planning, policy services, and financial advisory.",
+  title: "Indra Prakash - LIC Agent Portfolio | Life Insurance Expert",
+  description: "Professional portfolio of Indra Prakash, authorized LIC agent from Khalilabad Branch with expertise in life insurance planning, policy services, and financial advisory.",
   keywords: ["LIC agent", "life insurance", "financial planning", "Khalilabad", "Uttar Pradesh", "insurance advisor", "policy services"],
 };
 

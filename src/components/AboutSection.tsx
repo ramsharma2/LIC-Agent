@@ -37,7 +37,7 @@ export function AboutSection() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white transition-transform duration-300 group-hover:scale-[1.02]">
               <Image
                 src="/images/cover-photo.jpg"
-                alt="Indra Prakash Sharma with LIC officials"
+                alt="Indra Prakash with LIC officials"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover"

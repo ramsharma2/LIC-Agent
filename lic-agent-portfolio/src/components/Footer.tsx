@@ -21,7 +21,7 @@ export function Footer() {
                 className="object-contain"
               />
               <div>
-                <h3 className="font-bold text-lg">Indra Prakash Sharma</h3>
+                <h3 className="font-bold text-lg">Indra Prakash</h3>
                 <p className="text-xs text-gray-300">LIC Agent (Khalilabad Branch)</p>
               </div>
             </div>
@@ -155,13 +155,13 @@ export function Footer() {
 
         <div className="mt-12 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
           <p>
-            &copy; {currentYear} Indra Prakash Sharma. All rights reserved.
+            &copy; {currentYear} Indra Prakash. All rights reserved.
           </p>
           <p className="mt-2">
             LIC Agent (License No: 02431359) | IRDAI Registration: March 2023
           </p>
           <p className="mt-4 text-xs">
-            Disclaimer: This website belongs to Indra Prakash Sharma, LIC Agent, and not to Life Insurance Corporation of India (LIC).
+            Disclaimer: This website belongs to Indra Prakash, LIC Agent, and not to Life Insurance Corporation of India (LIC).
           </p>
         </div>
       </div>
