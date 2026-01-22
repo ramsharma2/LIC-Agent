@@ -154,7 +154,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
-          <p>
+          <p suppressHydrationWarning>
             &copy; {currentYear} Indra Prakash. All rights reserved.
           </p>
           <p className="mt-2">

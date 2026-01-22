@@ -86,7 +86,7 @@ export function ServicesSection() {
             {t('services.badge')}
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            {t('services.title')} <span className="bg-gradient-to-r from-licBlue to-blue-700 bg-clip-text text-transparent">{t('services.titleAccent')}</span>
+            {t('services.title')} <span className="bg-gradient-to-r from-licBlue to-blue-700 bg-clip-text text-transparent">{t('services.subtitleAccent')}</span>
           </h2>
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
             {t('services.subtitle')}

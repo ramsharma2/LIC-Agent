@@ -20,11 +20,11 @@ export function AboutSection() {
           <Badge className="bg-licBlue/10 text-licBlue hover:bg-licBlue/20 mb-4 text-sm px-4 py-1 transition-all duration-300 hover:scale-105">
             {t('about.badge')}
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-licBlue to-gray-900 bg-clip-text text-transparent">
-            {t('about.title')} <span className="text-licBlue">{t('about.titleAccent')}</span> {t('about.titleEnd')}
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-gray-900">{t('about.titleAccent')}</span> <span className="bg-gradient-to-r from-licBlue via-blue-600 to-licGold bg-clip-text text-transparent">{t('about.subtitleAccent')}</span> <span className="text-gray-900">Agent</span>
           </h2>
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-            {t('about.subtitle')}
+            {t('about.description')}
           </p>
         </div>
 
@@ -107,56 +107,71 @@ export function AboutSection() {
         <div className="relative mb-20">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-              Track Record of <span className="text-licBlue">Excellence</span>
+              Track Record of <span className="bg-gradient-to-r from-licBlue to-licGold bg-clip-text text-transparent">Excellence</span>
             </h3>
-            <p className="text-gray-600">Proven results that speak for themselves</p>
+            <p className="text-gray-600 text-lg">Proven results that speak for themselves</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="achievement-card group hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-licBlue/20 overflow-hidden">
+            <Card className="achievement-card group hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-red-200 overflow-hidden hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <CardContent className="p-8 relative z-10">
                 <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Heart className="h-8 w-8" />
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white mb-4 shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                    <Heart className="h-10 w-10" />
                   </div>
-                  <div className="text-5xl md:text-6xl font-bold mb-3 bg-gradient-to-br from-red-500 to-red-700 bg-clip-text text-transparent">
+                  <div className="text-5xl md:text-6xl font-bold mb-2 bg-gradient-to-br from-red-500 to-red-700 bg-clip-text text-transparent">
                     70+
                   </div>
-                  <h4 className="text-xl font-bold mb-2 text-gray-900">{t('about.deathClaims')}</h4>
-                  <p className="text-gray-600 leading-relaxed">{t('about.deathClaimsDescription')}</p>
+                  <h4 className="text-xl font-bold mb-3 text-gray-900">{t('about.deathClaims')}</h4>
+                  <div className="flex justify-center gap-0.5 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-sm">{t('about.deathClaimsDescription')}</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="achievement-card group hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-licBlue/20 overflow-hidden">
+            <Card className="achievement-card group hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-blue-200 overflow-hidden hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-br from-licBlue/5 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <CardContent className="p-8 relative z-10">
                 <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-licBlue to-blue-700 text-white mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Shield className="h-8 w-8" />
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-licBlue to-blue-700 text-white mb-4 shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                    <Shield className="h-10 w-10" />
                   </div>
-                  <div className="text-5xl md:text-6xl font-bold mb-3 bg-gradient-to-br from-licBlue to-blue-700 bg-clip-text text-transparent">
+                  <div className="text-5xl md:text-6xl font-bold mb-2 bg-gradient-to-br from-licBlue to-blue-700 bg-clip-text text-transparent">
                     700+
                   </div>
-                  <h4 className="text-xl font-bold mb-2 text-gray-900">{t('about.freeServices')}</h4>
-                  <p className="text-gray-600 leading-relaxed">{t('about.freeServicesDescription')}</p>
+                  <h4 className="text-xl font-bold mb-3 text-gray-900">{t('about.freeServices')}</h4>
+                  <div className="flex justify-center gap-0.5 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-sm">{t('about.freeServicesDescription')}</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="achievement-card group hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-licBlue/20 overflow-hidden">
+            <Card className="achievement-card group hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-yellow-200 overflow-hidden hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-br from-licGold/5 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <CardContent className="p-8 relative z-10">
                 <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-licGold to-yellow-600 text-white mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <FileCheck className="h-8 w-8" />
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-licGold to-yellow-600 text-white mb-4 shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                    <FileCheck className="h-10 w-10" />
                   </div>
-                  <div className="text-5xl md:text-6xl font-bold mb-3 bg-gradient-to-br from-licGold to-yellow-600 bg-clip-text text-transparent">
+                  <div className="text-5xl md:text-6xl font-bold mb-2 bg-gradient-to-br from-licGold to-yellow-600 bg-clip-text text-transparent">
                     42+
                   </div>
-                  <h4 className="text-xl font-bold mb-2 text-gray-900">{t('about.maturityClaims')}</h4>
-                  <p className="text-gray-600 leading-relaxed">{t('about.maturityClaimsDescription')}</p>
+                  <h4 className="text-xl font-bold mb-3 text-gray-900">{t('about.maturityClaims')}</h4>
+                  <div className="flex justify-center gap-0.5 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-sm">{t('about.maturityClaimsDescription')}</p>
                 </div>
               </CardContent>
             </Card>

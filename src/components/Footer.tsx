@@ -152,7 +152,7 @@ export function Footer() {
                 </span>
               </li>
             </ul>
-          </div>
+          </div> 
         </div>
 
         <div className="mt-12 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">

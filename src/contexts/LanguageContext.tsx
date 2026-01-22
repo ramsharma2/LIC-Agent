@@ -47,10 +47,11 @@ const translations = {
     
     // About Section
     'about.title': 'About Me',
+    'about.titleAccent': 'Professional',
     'about.subtitle': 'Professional',
     'about.subtitleAccent': 'Life Insurance',
     'about.subtitleEnd': 'Expert',
-    'about.description': 'Helping families secure their financial future through personalized life insurance solutions since 2023.',
+    'about.description': 'Your trusted partner in securing a bright financial future for your family with expert guidance and personalized care.',
     'about.name': 'Indra Prakash',
     'about.bio': 'Indra Prakash has been serving as an authorized Life Insurance Agent with Life Insurance Corporation of India (LIC) since March 15, 2023. With extensive experience and deep knowledge of the life insurance industry, he has helped over 1,400 clients secure their financial future through customized insurance planning.',
     'about.irdaCertified': 'IRDA Certified Professional',
@@ -128,11 +129,12 @@ const translations = {
     // Services Section
     'services.badge': 'Services',
     'services.title': 'My Services',
+    'services.titleAccent': 'Insurance Solutions',
     'services.subtitle': 'Comprehensive',
     'services.subtitleAccent': 'Insurance Solutions',
     'services.additionalServices': 'Additional Policy Services',
     'services.agentName': 'Indra Prakash',
-    'services.description': 'I provide a wide range of insurance services tailored to meet your financial goals and protect your family\'s future.',
+    'services.subtitle': 'I provide a wide range of insurance services tailored to meet your financial goals and protect your family\'s future.',
     'services.lifeInsurance': 'Life Insurance Planning',
     'services.lifeInsuranceDesc': 'Expert advice on selecting the right life insurance policies tailored to your family\'s needs',
     'services.childEducation': 'Child Education Planning',
@@ -422,10 +424,11 @@ const translations = {
     
     // About Section
     'about.title': 'मेरे बारे में',
+    'about.titleAccent': 'पेशेवर',
     'about.subtitle': 'पेशेवर',
     'about.subtitleAccent': 'जीवन बीमा',
     'about.subtitleEnd': 'विशेषज्ञ',
-    'about.description': '2023 से व्यक्तिगत जीवन बीमा समाधानों के माध्यम से परिवारों को उनके वित्तीय भविष्य को सुरक्षित करने में मदद कर रहे हैं।',
+    'about.description': 'आपके परिवार के उज्ज्वल वित्तीय भविष्य को सुरक्षित करने में आपका विश्वसनीय साथी, विशेषज्ञ मार्गदर्शन और व्यक्तिगत सेवा के साथ।',
     'about.name': 'इंद्र प्रकाश',
     'about.bio': 'इंद्र प्रकाश 15 मार्च, 2023 से भारतीय जीवन बीमा निगम (एलआईसी) के साथ एक अधिकृत जीवन बीमा एजेंट के रूप में सेवा कर रहे हैं। जीवन बीमा उद्योग के व्यापक अनुभव और गहरी जानकारी के साथ, उन्होंने अनुकूलित बीमा योजना के माध्यम से 1,400 से अधिक ग्राहकों को उनके वित्तीय भविष्य को सुरक्षित करने में मदद की है।',
     'about.irdaCertified': 'आईआरडीए प्रमाणित पेशेवर',
@@ -503,8 +506,7 @@ const translations = {
     
     // Services Section
     'services.badge': 'सेवाएं',
-    'services.title': 'मेरी सेवाएं',
-    'services.subtitle': 'व्यापक',
+    'services.title': 'मेरी सेवाएं',    'services.titleAccent': 'बीमा समाधान',    'services.subtitle': 'व्यापक',
     'services.subtitleAccent': 'बीमा समाधान',
     'services.additionalServices': 'अतिरिक्त पॉलिसी सेवाएं',
     'services.agentName': 'इंद्र प्रकाश',

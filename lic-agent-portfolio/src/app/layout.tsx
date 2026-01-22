@@ -29,15 +29,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable,
-          poppins.variable,
-          montserrat.variable
-        )}
-      >
-        {children}
+      <body suppressHydrationWarning className="min-h-screen bg-background antialiased">
+        <div
+          className={cn(
+            "min-h-screen font-sans",
+            inter.variable,
+            poppins.variable,
+            montserrat.variable
+          )}
+        >
+          {children}
+        </div>
         <Toaster />
       </body>
     </html>
