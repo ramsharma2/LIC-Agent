@@ -17,8 +17,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Indra Prakash Sharma - LIC Agent Portfolio | Life Insurance Expert",
-  description: "Professional portfolio of Indra Prakash Sharma, authorized LIC agent from Khalilabad Branch with expertise in life insurance planning, policy services, and financial advisory.",
+  title: "Indra Prakash - LIC Agent Portfolio | Life Insurance Expert",
+  description: "Professional portfolio of Indra Prakash, authorized LIC agent from Khalilabad Branch with expertise in life insurance planning, policy services, and financial advisory.",
   keywords: ["LIC agent", "life insurance", "financial planning", "Basti", "Khalilabad", "SantKabirNagar", "Uttar Pradesh", "insurance advisor", "policy services"],
 };
 
@@ -29,15 +29,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable,
-          poppins.variable,
-          montserrat.variable
-        )}
-      >
-        {children}
+      <body suppressHydrationWarning className="min-h-screen bg-background antialiased">
+        <div
+          className={cn(
+            "min-h-screen font-sans",
+            inter.variable,
+            poppins.variable,
+            montserrat.variable
+          )}
+        >
+          {children}
+        </div>
         <Toaster />
       </body>
     </html>

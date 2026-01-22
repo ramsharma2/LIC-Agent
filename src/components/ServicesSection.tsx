@@ -75,53 +75,82 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="services-section py-16 md:py-24">
+    <section id="services" className="services-section py-16 md:py-24 relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-licBlue/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-licGold/5 rounded-full blur-3xl -z-10"></div>
+      
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <Badge className="bg-licGold/10 text-licGold hover:bg-licGold/20 mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in-up">
+          <Badge className="bg-licGold/10 text-licGold hover:bg-licGold/20 mb-4 px-4 py-1 text-sm transition-all duration-300 hover:scale-105">
             {t('services.badge')}
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {t('services.title')} <span className="text-licBlue">{t('services.titleAccent')}</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            {t('services.title')} <span className="bg-gradient-to-r from-licBlue to-blue-700 bg-clip-text text-transparent">{t('services.subtitleAccent')}</span>
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
             {t('services.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {services.map((service) => (
-            <Card key={service.title} className="hover:shadow-lg transition-shadow duration-300 border-t-4 border-t-licBlue h-full">
-              <CardContent className="pt-6">
-                <div className="flex flex-col items-center text-center">
-                  <div className="text-licBlue mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {services.map((service, index) => (
+            <Card 
+              key={service.title} 
+              className="group hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-licBlue/20 h-full overflow-hidden hover:-translate-y-2"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-licBlue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <CardContent className="pt-8 pb-6 relative z-10">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-licBlue to-blue-700 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg p-8 mt-12">
-          <h3 className="text-2xl font-semibold mb-6 text-center">{t('services.additionalServices')}</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {policyServices.map((service) => (
-              <div key={service.title} className="flex items-start gap-4 p-4 rounded-lg bg-licBlue/5">
-                <div className="text-licBlue">{service.icon}</div>
-                <div>
-                  <h4 className="font-semibold mb-1">{service.title}</h4>
-                  <p className="text-sm text-gray-600">{service.description}</p>
+        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-2 border-gray-100 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-licGold/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-licBlue/5 rounded-full blur-3xl"></div>
+          
+          <div className="relative z-10">
+            <div className="text-center mb-10">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                {t('services.additionalServices')}
+              </h3>
+              <div className="h-1 w-24 bg-gradient-to-r from-licBlue to-licGold rounded-full mx-auto"></div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+              {policyServices.map((service, index) => (
+                <div 
+                  key={service.title} 
+                  className="group flex items-start gap-4 p-5 rounded-xl bg-gradient-to-br from-licBlue/5 to-transparent border border-gray-100 hover:border-licBlue/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-licBlue to-blue-700 flex items-center justify-center text-white shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">{service.title}</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="mt-10 text-center">
-            <p className="text-gray-700 italic">
-              {t('services.quote')}
-            </p>
-            <p className="font-semibold mt-2">- {t('services.agentName')}</p>
+            <div className="mt-12 p-6 bg-gradient-to-r from-licBlue/5 via-licGold/5 to-licBlue/5 rounded-xl border-l-4 border-licBlue">
+              <p className="text-gray-700 text-lg italic leading-relaxed text-center">
+                "{t('services.quote')}"
+              </p>
+              <p className="font-bold text-licBlue mt-3 text-center text-lg">
+                - {t('services.agentName')}
+              </p>
+            </div>
           </div>
         </div>
       </div>

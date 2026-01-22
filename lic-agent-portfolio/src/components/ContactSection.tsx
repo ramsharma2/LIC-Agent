@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -13,7 +12,6 @@ import {
   Building,
   Clock,
   Calendar,
-  SendIcon,
 } from "lucide-react";
 
 export function ContactSection() {
@@ -179,118 +177,78 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Quick Connect Panel (replaces form) */}
           <div className="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-6">Get in Touch</h3>
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                    Full Name <span className="text-red-500">*</span>
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    placeholder="Your name"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                    Phone Number <span className="text-red-500">*</span>
-                  </label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    placeholder="Your phone number"
-                    required
-                  />
-                </div>
+            <h3 className="text-xl font-semibold mb-6">Connect Instantly</h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <a
+                href="tel:+919125467007"
+                className={cn(buttonVariants(), "w-full bg-licBlue hover:bg-licBlue/90 cursor-pointer [&_svg]:pointer-events-auto")}
+              >
+                <Phone className="mr-2 h-4 w-4" /> Call Now
+              </a>
+
+              <a
+                href="https://api.whatsapp.com/send/?phone=919125467007"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(buttonVariants(), "w-full bg-green-600 hover:bg-green-700 cursor-pointer")}
+              >
+                WhatsApp Chat
+              </a>
+
+              <a
+                href="mailto:balram.lic02431@gmail.com"
+                className={cn(buttonVariants({ variant: "secondary" }), "w-full cursor-pointer [&_svg]:pointer-events-auto")}
+              >
+                <Mail className="mr-2 h-4 w-4" /> Email Me
+              </a>
+            </div>
+
+            <div className="mt-8">
+              <Card className="border-none shadow-sm">
+                <CardContent className="p-5 md:p-6">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                      <h4 className="text-lg font-semibold">Book an Appointment</h4>
+                      <p className="text-gray-600 mt-1">Choose a convenient time for a call or home visit.</p>
+                    </div>
+                    <a
+                      href="https://forms.gle/MCjLEGK1wdtDZpnu5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cn(buttonVariants(), "bg-licBlue hover:bg-licBlue/90 cursor-pointer")}
+                    >
+                      Open Appointment Form
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="mt-8">
+              <h4 className="text-lg font-semibold mb-3">Frequently Asked Questions</h4>
+              <div className="space-y-3">
+                <details className="group rounded-md border border-gray-200 bg-white p-4">
+                  <summary className="cursor-pointer list-none font-medium text-gray-900">
+                    How quickly will you respond?
+                  </summary>
+                  <p className="mt-2 text-sm text-gray-600">I usually respond within the same business day.</p>
+                </details>
+                <details className="group rounded-md border border-gray-200 bg-white p-4">
+                  <summary className="cursor-pointer list-none font-medium text-gray-900">
+                    Do you provide home visits?
+                  </summary>
+                  <p className="mt-2 text-sm text-gray-600">Yes, appointments for home visits are available.</p>
+                </details>
+                <details className="group rounded-md border border-gray-200 bg-white p-4">
+                  <summary className="cursor-pointer list-none font-medium text-gray-900">
+                    What documents are needed to get started?
+                  </summary>
+                  <p className="mt-2 text-sm text-gray-600">Basic ID proof, address proof, and PAN are typically required.</p>
+                </details>
               </div>
-
-              <div className="space-y-2">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email Address
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Your email address"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="service" className="block text-sm font-medium text-gray-700">
-                  Service Interested In
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  <option value="">Select a service</option>
-                  <option value="life_insurance">Life Insurance</option>
-                  <option value="health_insurance">Health Insurance</option>
-                  <option value="child_education">Child Education Planning</option>
-                  <option value="retirement">Retirement Planning</option>
-                  <option value="tax_planning">Tax Planning</option>
-                  <option value="policy_service">Policy Service</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="Tell me about your insurance needs or questions"
-                  rows={4}
-                />
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="consent"
-                  name="consent"
-                  className="h-4 w-4 rounded border-gray-300 text-licBlue focus:ring-licBlue"
-                  required
-                />
-                <label htmlFor="consent" className="text-sm text-gray-600">
-                  I consent to being contacted about my insurance needs.
-                </label>
-              </div>
-
-              <Button className="w-full bg-licBlue hover:bg-licBlue/90">
-                <SendIcon className="mr-2 h-4 w-4" /> Send Message
-              </Button>
-            </form>
-
-            <div className="mt-6 text-center">
-              <p className="text-sm text-gray-600">
-                Or schedule an appointment directly:{" "}
-                <a
-                  href="https://api.whatsapp.com/send/?phone=919125467007"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green-600 font-medium hover:underline"
-                >
-                  WhatsApp
-                </a>{" "}
-                |{" "}
-                <a
-                  href="https://forms.gle/MCjLEGK1wdtDZpnu5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-licBlue font-medium hover:underline"
-                >
-                  Appointment Form
-                </a>
-              </p>
             </div>
           </div>
         </div>

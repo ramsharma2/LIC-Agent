@@ -104,40 +104,47 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="bg-white py-16 md:py-24">
+    <section id="contact" className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-24 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-licBlue/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-licGold/5 rounded-full blur-3xl -z-10"></div>
+      
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <Badge className="bg-licBlue/10 text-licBlue hover:bg-licBlue/20 mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in-up">
+          <Badge className="bg-licBlue/10 text-licBlue hover:bg-licBlue/20 mb-4 px-4 py-1 text-sm transition-all duration-300 hover:scale-105">
             {t('contact.badge')}
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {t('contact.title')} <span className="text-licBlue">{t('contact.titleAccent')}</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            {t('contact.title')} <span className="bg-gradient-to-r from-licBlue to-blue-700 bg-clip-text text-transparent">{t('contact.titleAccent')}</span>
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
             {t('contact.subtitle')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {contactInfo.map((item, index) => (
-                <Card key={item.title} className="border-none shadow-sm hover:shadow-md transition-all">
-                  <CardContent className="p-4 flex items-start gap-3">
-                    <div className="text-licBlue mt-1">{item.icon}</div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                <Card key={item.title} className="group border-2 border-gray-100 hover:border-licBlue/20 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-licBlue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <CardContent className="p-5 flex items-start gap-4 relative z-10">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-licBlue to-blue-700 flex items-center justify-center text-white shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                      {item.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="text-gray-600 hover:text-licBlue transition-colors"
+                          className="text-gray-600 hover:text-licBlue transition-colors text-sm font-medium"
                           target={item.href.startsWith("http") ? "_blank" : undefined}
                           rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-gray-600">{item.value}</p>
+                        <p className="text-gray-600 text-sm font-medium">{item.value}</p>
                       )}
                     </div>
                   </CardContent>
@@ -224,144 +231,93 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-6">{t('contact.formTitle')}</h3>
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label htmlFor="user_name" className="block text-sm font-medium text-gray-700">
-                    {t('contact.fullName')} <span className="text-red-500">*</span>
-                  </label>
-                  <Input
-                    id="user_name"
-                    name="user_name"
-                    placeholder={t('contact.fullNamePlaceholder')}
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="user_phone" className="block text-sm font-medium text-gray-700">
-                    {t('contact.phoneNumber')} <span className="text-red-500">*</span>
-                  </label>
-                  <Input
-                    id="user_phone"
-                    name="user_phone"
-                    placeholder={t('contact.phoneNumberPlaceholder')}
-                    required
-                  />
-                </div>
-              </div>
+          {/* Quick Connect Panel (replaces form) */}
+          <div className="bg-gradient-to-br from-licBlue/10 to-blue-50 p-6 md:p-8 rounded-xl border-2 border-licBlue/20 shadow-lg">
+            <h3 className="text-2xl font-bold mb-2 text-gray-900">Connect Instantly</h3>
+            <p className="text-gray-600 mb-8">Choose your preferred way to reach out</p>
 
-              <div className="space-y-2">
-                <label htmlFor="user_email" className="block text-sm font-medium text-gray-700">
-                  {t('contact.emailAddress')}
-                </label>
-                <Input
-                  id="user_email"
-                  name="user_email"
-                  type="email"
-                  placeholder={t('contact.emailAddressPlaceholder')}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="service" className="block text-sm font-medium text-gray-700">
-                  {t('contact.serviceInterested')}
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  <option value="">{t('contact.selectService')}</option>
-                  <option value="life_insurance">{t('contact.lifeInsurance')}</option>
-                  <option value="health_insurance">{t('contact.healthInsurance')}</option>
-                  <option value="child_education">{t('contact.childEducation')}</option>
-                  <option value="retirement">{t('contact.retirement')}</option>
-                  <option value="tax_planning">{t('contact.taxPlanning')}</option>
-                  <option value="policy_service">{t('contact.policyService')}</option>
-                  <option value="other">{t('contact.other')}</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  {t('contact.message')}
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder={t('contact.messagePlaceholder')}
-                  rows={4}
-                />
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="consent"
-                  name="consent"
-                  className="h-4 w-4 rounded border-gray-300 text-licBlue focus:ring-licBlue"
-                  required
-                />
-                <label htmlFor="consent" className="text-sm text-gray-600">
-                  I consent to being contacted about my insurance needs.
-                </label>
-              </div>
-
-              <Button 
-                type="submit" 
-                className="w-full bg-licBlue hover:bg-licBlue/90"
-                disabled={isSubmitting}
+            <div className="space-y-3">
+              {/* Call Now Button */}
+              <button
+                onClick={() => window.location.href = "tel:+919125467007"}
+                className="w-full p-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-md hover:shadow-lg active:scale-95"
               >
-                {isSubmitting ? (
-                  <span className="flex items-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    {t('contact.sending')}
-                  </span>
-                ) : (
-                  <>
-                    <Send className="mr-2 h-4 w-4" /> {t('contact.sendMessage')}
-                  </>
-                )}
-              </Button>
+                <Phone className="h-5 w-5" />
+                <span>Call Now: 09125467007</span>
+              </button>
 
-              {submitStatus.type && (
-                <div className={`mt-4 p-3 rounded-md ${
-                  submitStatus.type === 'success' 
-                    ? 'bg-green-50 text-green-800' 
-                    : 'bg-red-50 text-red-800'
-                }`}>
-                  {submitStatus.message}
-                </div>
-              )}
-            </form>
+              {/* WhatsApp Chat Button */}
+              <button
+                onClick={() => window.open("https://api.whatsapp.com/send/?phone=919125467007", "_blank")}
+                className="w-full p-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-md hover:shadow-lg active:scale-95"
+              >
+                <MessageCircle className="h-5 w-5" />
+                <span>WhatsApp Chat</span>
+              </button>
 
-            <div className="mt-6 text-center">
-              <p className="text-sm text-gray-600">
-                {t('contact.scheduleText')}{" "}
-                <a
-                  href="https://api.whatsapp.com/send/?phone=919125467007"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green-600 font-medium hover:underline"
-                >
-                  {t('contact.whatsapp')}
-                </a>{" "}
-                |{" "}
-                <a
-                  href="https://forms.gle/MCjLEGK1wdtDZpnu5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-licBlue font-medium hover:underline"
-                >
-                  {t('contact.appointmentForm')}
-                </a>
-              </p>
+              {/* Email Button */}
+              <button
+                onClick={() => window.location.href = "mailto:indra.0781@gmail.com"}
+                className="w-full p-4 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-md hover:shadow-lg active:scale-95"
+              >
+                <Mail className="h-5 w-5" />
+                <span>Email: indra.0781@gmail.com</span>
+              </button>
+            </div>
+
+            {/* Divider */}
+            <div className="my-8 relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-300"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-gradient-to-br from-licBlue/10 to-blue-50 text-gray-500">OR</span>
+              </div>
+            </div>
+
+            {/* Book Appointment Button */}
+            <button
+              onClick={() => window.open("https://forms.gle/MCjLEGK1wdtDZpnu5", "_blank")}
+              className="w-full p-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-md hover:shadow-lg active:scale-95"
+            >
+              <Calendar className="h-5 w-5" />
+              <span>Book an Appointment</span>
+            </button>
+
+            {/* Info Cards */}
+            <div className="mt-8 grid grid-cols-2 gap-3">
+              <div className="bg-white p-4 rounded-lg border border-licBlue/20 text-center">
+                <div className="text-2xl font-bold text-licBlue mb-1">24/7</div>
+                <div className="text-sm text-gray-600">Available Support</div>
+              </div>
+              <div className="bg-white p-4 rounded-lg border border-licBlue/20 text-center">
+                <div className="text-2xl font-bold text-green-600 mb-1">100%</div>
+                <div className="text-sm text-gray-600">Reliable Service</div>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <h4 className="text-lg font-semibold mb-3">Frequently Asked Questions</h4>
+              <div className="space-y-3">
+                <details className="group rounded-md border border-gray-200 bg-white p-4">
+                  <summary className="cursor-pointer list-none font-medium text-gray-900">
+                    How quickly will you respond?
+                  </summary>
+                  <p className="mt-2 text-sm text-gray-600">I usually respond within the same business day.</p>
+                </details>
+                <details className="group rounded-md border border-gray-200 bg-white p-4">
+                  <summary className="cursor-pointer list-none font-medium text-gray-900">
+                    Do you provide home visits?
+                  </summary>
+                  <p className="mt-2 text-sm text-gray-600">Yes, appointments for home visits are available.</p>
+                </details>
+                <details className="group rounded-md border border-gray-200 bg-white p-4">
+                  <summary className="cursor-pointer list-none font-medium text-gray-900">
+                    What documents are needed to get started?
+                  </summary>
+                  <p className="mt-2 text-sm text-gray-600">Basic ID proof, address proof, and PAN are typically required.</p>
+                </details>
+              </div>
             </div>
           </div>
         </div>
