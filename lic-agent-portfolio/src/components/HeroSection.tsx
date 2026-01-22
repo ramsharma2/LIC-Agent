@@ -80,7 +80,7 @@ export function HeroSection() {
                 </Button>
                 <Button asChild size="sm" className="bg-licBlue hover:bg-licBlue/90 text-white rounded-full">
                   <a
-                    href="https://forms.gle/MCjLEGK1wdtDZpnu5"
+                    href="https://www.facebook.com/share/1CHBg7CDsJ/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1"
