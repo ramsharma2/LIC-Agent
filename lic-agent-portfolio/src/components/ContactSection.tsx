@@ -215,7 +215,7 @@ export function ContactSection() {
                       <p className="text-gray-600 mt-1">Choose a convenient time for a call or home visit.</p>
                     </div>
                     <a
-                      href="https://forms.gle/MCjLEGK1wdtDZpnu5"
+                      href="https://www.facebook.com/share/1CHBg7CDsJ/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={cn(buttonVariants(), "bg-licBlue hover:bg-licBlue/90 cursor-pointer")}

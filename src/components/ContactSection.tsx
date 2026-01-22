@@ -277,7 +277,7 @@ export function ContactSection() {
 
             {/* Book Appointment Button */}
             <button
-              onClick={() => window.open("https://forms.gle/MCjLEGK1wdtDZpnu5", "_blank")}
+              onClick={() => window.open("https://www.facebook.com/share/1CHBg7CDsJ/", "_blank")}
               className="w-full p-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-md hover:shadow-lg active:scale-95"
             >
               <Calendar className="h-5 w-5" />
